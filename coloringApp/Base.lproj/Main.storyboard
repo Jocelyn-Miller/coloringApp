@@ -15,15 +15,11 @@
                         <viewControllerLayoutGuide type="top" id="EG8-qy-3JL"/>
                         <viewControllerLayoutGuide type="bottom" id="4Bb-Ar-ihz"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7OZ-PE-nrB">
-                                <rect key="frame" x="0.0" y="90" width="414" height="658"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoQ-Yy-Hji">
                                 <rect key="frame" x="0.0" y="90" width="414" height="658"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -85,17 +81,6 @@
                                     <action selector="highlighter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kWk-T8-TEe"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="5" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="fbj-ip-Y24">
-                                <rect key="frame" x="18" y="744" width="378" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="minimumTrackTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="maximumTrackTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="thumbTintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <connections>
-                                    <action selector="mySlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="qQg-Fk-3cK"/>
-                                </connections>
-                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5a-VJ-S0F">
                                 <rect key="frame" x="360" y="782" width="45" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -131,9 +116,25 @@
                                     <action selector="blackColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zIS-SA-lSz"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="5" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="fbj-ip-Y24">
+                                <rect key="frame" x="13" y="744" width="378" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="minimumTrackTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <connections>
+                                    <action selector="mySlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="qQg-Fk-3cK"/>
+                                </connections>
+                            </slider>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoQ-Yy-Hji">
+                                <rect key="frame" x="0.0" y="90" width="414" height="658"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <size key="freeformSize" width="420" height="896"/>
                     <connections>
                         <outlet property="mainImageView" destination="7OZ-PE-nrB" id="5Tl-zz-Zw2"/>
                         <outlet property="redbutton" destination="rq7-EA-Nnk" id="MaN-Bw-Woy"/>

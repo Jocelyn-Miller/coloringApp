@@ -18,32 +18,16 @@ class ViewController: UIViewController
     var highlighterBool = false
     var eraserBool = false
     
-    @IBOutlet weak var topStack: UIStackView!
-    @IBOutlet weak var bottomStack: UIStackView!
     
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var tempImageView: UIImageView!
-    
     
     @IBOutlet weak var redbutton: UIButton!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-//        tempImageView.isUserInteractionEnabled = true
-//
-//        mainImageView.translatesAutoresizingMaskIntoConstraints = false
-//        tempImageView.translatesAutoresizingMaskIntoConstraints = false
-//        mainImageView.topAnchor.constraint(equalTo: topStack.bottomAnchor, constant: 10).isActive = true
-//        mainImageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
-//         mainImageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-//        mainImageView.bottomAnchor.constraint(equalTo: bottomStack.topAnchor, constant: -10).isActive = true
-//
-//        tempImageView.topAnchor.constraint(equalTo: topStack.bottomAnchor, constant: 10).isActive = true
-//        tempImageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
-//         tempImageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-//        tempImageView.bottomAnchor.constraint(equalTo: bottomStack.topAnchor, constant: -10).isActive = true
-//
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), false, 1.0)
         
     }
     
@@ -138,7 +122,9 @@ class ViewController: UIViewController
     func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint)
     {
         //UIScreen.main.bounds.size
-        UIGraphicsBeginImageContext(UIScreen.main.bounds.size)
+
+//UIGraphicsBeginImageContext(UIScreen.main.bounds.size)
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), false, 1.0)
         guard let context = UIGraphicsGetCurrentContext() else
         {
             return
@@ -147,6 +133,8 @@ class ViewController: UIViewController
 
         context.move(to: fromPoint)
         context.addLine(to: toPoint)
+        
+        print(toPoint)
         
         context.setLineCap(.round)
         
@@ -169,6 +157,7 @@ class ViewController: UIViewController
         context.strokePath()
         
         tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
+        
 
         tempImageView.alpha = 1.0
         UIGraphicsEndImageContext()
@@ -190,6 +179,7 @@ class ViewController: UIViewController
         lastPoint = currentPoint
     }
     
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?)
     {
         if swipe != true
@@ -206,15 +196,12 @@ class ViewController: UIViewController
     }
     
     
-    @IBAction func cameraPicker(_ sender: UIButton)
-    {
-        //
-    }
+
     
     @IBAction func exportButton(_ sender: UIButton)
     {
     
-        var myImage = tempImageView.image
+        let myImage = tempImageView.image
         let items = [myImage]
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
         
